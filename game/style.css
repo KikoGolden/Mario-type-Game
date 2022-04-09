@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
+
+.text {
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size:2em;
+    font-weight: 700;
+    color: rgb(155, 4, 4);
+    text-shadow: 1px 1px 1px #f04646,
+        1px 2px 1px #f04646,
+        1px 3px 1px #f04646,
+        1px 4px 1px #f04646,
+        1px 5px 1px #f04646,
+        1px 6px 1px #f04646,
+        1px 7px 1px #f04646,
+        1px 8px 1px #f04646,
+        1px 9px 1px #f04646,
+        1px 10px 1px #f04646,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+
+#genderLabel{text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+    0px 8px 13px rgba(0,0,0,0.1),
+    0px 18px 23px rgba(0,0,0,0.1);
+    color: rgb(155, 4, 4);
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+.powerBall{
+    background: url('/images/powerball.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    left: 60px;
+    z-index: 1;
+    border-radius: 100%;
+}
+
+body{
+    margin: 0;
+    background: url('/images/bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#playBtn{
+    position: absolute;
+    z-index: 100;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+h1{
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+    font-family: 'Bangers', cursive;
+    text-decoration: underline;
+    color: rgb(155, 4, 4);
+    margin-top: 10%;
+    text-align: center;
+    font-weight: bold;
+    z-index: 200;
+}
+#game{
+    font-family: 'Bangers', cursive;
+    background: url('images/game-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 900px;
+    height: 500px;
+    border: 3px solid rgb(0, 0, 0);
+    position: absolute;
+    overflow: hidden;
+    border-bottom: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#genderField{
+    margin-left:10%;
+    position: absolute;
+    top: 20%;
+}
+#charecter{
+    z-index: 10;
+    background: url('/images/player.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 50px;
+    position: relative;
+    top: 450px;
+    left: 50px;
+}
+.jump{
+    animation: jump 0.5s linear;
+}
+.move{
+    animation: moveBlock 1s linear infinite;
+}
+.shoot{
+    animation: shoot 0.5s linear;
+}
+
+
+#block{
+    background: url('/images/plant.png');
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 430px;
+    left: 910px;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+@keyframes moveBlock {
+    0%{
+        left: 910px;
+    }
+    20%{
+        left: 704px;
+    }
+    40%{
+        left: 528px;
+    }
+    60%{
+        left: 352px;
+    }
+    80%{
+        left: 176px;
+    }
+    100%{
+        left: -30px;
+    }
+}
+
+@keyframes shoot {
+    0%{
+        left: 60px;
+    }
+    20%{
+        left: 160px;
+    }
+    40%{
+        left: 360px;
+    }
+    60%{
+        left: 560px;
+    }
+    80%{
+        left: 700px;
+    }
+    100%{
+        left: 880px;
+    }
+}
+
+@keyframes jump {
+    0%{
+        top: 450px;
+    }
+    20%{
+        top: 420px;
+    }
+    40%{
+        top: 400px;
+    }
+    60%{
+        top: 400px;
+    }
+    80%{
+        top: 420px;
+    }
+    100%{
+        top: 450px;
+    }
+}
