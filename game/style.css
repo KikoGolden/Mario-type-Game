@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
-
+#health{
+    position: relative;
+    top: -10px;
+    left: 720px;
+    z-index: 50;
+}
 .text {
     text-transform: uppercase;
     font-family: verdana;
@@ -30,6 +35,15 @@
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
 }
+#textBoss{
+    position: absolute; 
+    z-index: 100;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    animation: bossShow 2s linear;
+}
 .powerBall{
     background: url('/images/powerball.png');
     background-size: cover;
@@ -41,7 +55,17 @@
     z-index: 1;
     border-radius: 100%;
 }
-
+.boss{
+    position: relative;
+    top: 220px;
+    left: 740px;
+    width: 150px;
+    height: 200px;
+    background: url('/images/shisha_boss-showing.png');
+    background-size: cover;
+    animation: shishaComing 1s linear;
+    background-repeat: no-repeat;
+}
 body{
     margin: 0;
     background: url('/images/bg.webp');
@@ -108,7 +132,6 @@ h1{
     animation: shoot 0.5s linear;
 }
 
-
 #block{
     background: url('/images/plant.png');
     background-repeat:no-repeat;
@@ -127,6 +150,42 @@ section{
     padding-top: 2%;
     padding-left: 10%;
     padding-right: 10%;
+}
+
+@keyframes bossShow {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 0.5;
+    }
+    40%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 0.5;
+    }
+    100%{
+       opacity: 0;
+    }
+}
+
+@keyframes shishaComing {
+    0%{
+        left: 910px;
+    }
+    40%{
+        left: 850px;
+    }
+    60%{
+        left: 800px;
+    }
+    100%{
+        left: 750px;
+    }
 }
 
 @keyframes moveBlock {
@@ -167,7 +226,7 @@ section{
         left: 700px;
     }
     100%{
-        left: 880px;
+        left: 980px;
     }
 }
 
