@@ -1,34 +1,118 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
+@import url('http://fonts.cdnfonts.com/css/games');
+@import url('http://fonts.cdnfonts.com/css/game');
+
+/*html elements*/
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: url('/images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+h1{
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+    font-family: 'Bangers', cursive;
+    text-decoration: underline;
+    color: rgb(155, 4, 4);
+    margin-top: 10%;
+    text-align: center;
+    font-weight: bold;
+    z-index: 200;
+}
+
+/*stats*/
 #health{
     position: relative;
     top: -10px;
     left: 720px;
     z-index: 50;
 }
+#stamina-wrapper{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 5px;
+    left: 20px;
+}
+#staminaLabel{
+    font-family: 'GAME', serif;
+    color: wheat;
+    font-size: 20px;
+}
+#stamina{
+    width: 300px;
+    margin-left: 10px;
+}
+#heart-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#heart-wrapper img{
+    width: 35px;
+}
+
+/*classes*/
 .text {
     text-transform: uppercase;
     font-family: verdana;
     font-size:2em;
     font-weight: 700;
     color: rgb(155, 4, 4);
-    text-shadow: 1px 1px 1px #f04646,
-        1px 2px 1px #f04646,
-        1px 3px 1px #f04646,
-        1px 4px 1px #f04646,
-        1px 5px 1px #f04646,
-        1px 6px 1px #f04646,
-        1px 7px 1px #f04646,
-        1px 8px 1px #f04646,
-        1px 9px 1px #f04646,
-        1px 10px 1px #f04646,
+    text-shadow: 1px 1px 1px #fb7f7f,
+        1px 2px 1px #fb7f7f,
+        1px 3px 1px #fb7f7f,
+        1px 4px 1px #fb7f7f,
+        1px 5px 1px #fb7f7f,
+        1px 6px 1px #fb7f7f,
+        1px 7px 1px #fb7f7f,
     1px 18px 6px rgba(16,16,16,0.4),
     1px 22px 10px rgba(16,16,16,0.2),
     1px 25px 35px rgba(16,16,16,0.2),
     1px 30px 60px rgba(16,16,16,0.4);
 }
+.powerBall{
+    background: url('/images/powerball.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    left: 60px;
+    z-index: 1;
+    border-radius: 100%;
+}
+.boss{
+    position: relative;
+    top: 222px;
+    left: 740px;
+    width: 150px;
+    height: 200px;
+    background: url('/images/shisha_boss-showing.png');
+    background-size: cover;
+    animation: shishaComing 1s linear;
+    background-repeat: no-repeat;
+}
+.coin-text{
+    min-width: 500px;
+}
 
-#genderLabel{text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+/*main elements*/
+#genderLabel{
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
     0px 8px 13px rgba(0,0,0,0.1),
     0px 18px 23px rgba(0,0,0,0.1);
     color: rgb(155, 4, 4);
@@ -44,34 +128,6 @@
     width: 600px;
     animation: bossShow 2s linear;
 }
-.powerBall{
-    background: url('/images/powerball.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 20px;
-    height: 10px;
-    position: absolute;
-    left: 60px;
-    z-index: 1;
-    border-radius: 100%;
-}
-.boss{
-    position: relative;
-    top: 220px;
-    left: 740px;
-    width: 150px;
-    height: 200px;
-    background: url('/images/shisha_boss-showing.png');
-    background-size: cover;
-    animation: shishaComing 1s linear;
-    background-repeat: no-repeat;
-}
-body{
-    margin: 0;
-    background: url('/images/bg.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 #playBtn{
     position: absolute;
     z-index: 100;
@@ -79,19 +135,8 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 }
-h1{
-    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-             0px 8px 13px rgba(0,0,0,0.1),
-             0px 18px 23px rgba(0,0,0,0.1);
-    font-family: 'Bangers', cursive;
-    text-decoration: underline;
-    color: rgb(155, 4, 4);
-    margin-top: 10%;
-    text-align: center;
-    font-weight: bold;
-    z-index: 200;
-}
 #game{
+    border-radius: 5px;
     font-family: 'Bangers', cursive;
     background: url('images/game-bg.png');
     background-repeat: no-repeat;
@@ -122,16 +167,6 @@ h1{
     top: 450px;
     left: 50px;
 }
-.jump{
-    animation: jump 0.5s linear;
-}
-.move{
-    animation: moveBlock 1s linear infinite;
-}
-.shoot{
-    animation: shoot 0.5s linear;
-}
-
 #block{
     background: url('/images/plant.png');
     background-repeat:no-repeat;
@@ -143,15 +178,101 @@ h1{
     left: 910px;
 }
 
-section{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 2%;
-    padding-left: 10%;
-    padding-right: 10%;
+/*functionalities*/
+.jump{
+    animation: jump 0.5s linear;
+}
+.move{
+    animation: moveBlock 1s linear infinite;
+}
+.cloudShoot{
+    animation: bossClouds 1s linear infinite;
+}
+.shoot{
+    animation: shoot 0.5s linear;
 }
 
+/*shop articles*/
+#shop{
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+    0px 8px 13px rgba(0,0,0,0.1),
+    0px 18px 23px rgba(0,0,0,0.1);
+    font-weight: bold;
+    font-family: Play, sans-serif; 
+    color: black;
+    margin-right: 1%;
+    margin-top: 3%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-evenly;
+    gap: 20px;
+    float: right;
+    flex-wrap:wrap;
+    width: 460px;
+}
+#shop h3{
+    font-size: 25px;
+    color: rgb(95, 0, 16);
+    font-family: 'Games', sans-serif;
+}
+#shop article{
+    cursor: pointer;
+    background: url('/images/article-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 220px;
+    height: 300px;
+    border-radius: 10px;
+    padding: 10px 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3%;
+}
+.selected{
+    border: 6px solid rgba(35, 0, 233, 0.574);
+}
+#shop img{
+    height: 90px;
+ width: 100%;
+}
+.button-article {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-article:hover, .button-article:active{ 
+    background-color: initial; 
+    background-position: 0 0; 
+    color: #FF4742; 
+}
+.button-article:active{ 
+    opacity: .5; 
+}
+
+
+/*animations*/
 @keyframes bossShow {
     0%{
         opacity: 0;
@@ -209,6 +330,27 @@ section{
     }
 }
 
+@keyframes bossClouds {
+    0%{
+        left: 720px;
+    }
+    20%{
+        left: 704px;
+    }
+    40%{
+        left: 528px;
+    }
+    60%{
+        left: 352px;
+    }
+    80%{
+        left: 176px;
+    }
+    100%{
+        left: -30px;
+    }
+}
+
 @keyframes shoot {
     0%{
         left: 60px;
@@ -248,5 +390,70 @@ section{
     }
     100%{
         top: 450px;
+    }
+}
+
+/*Screen Widths*/
+@media only screen and (max-width: 1870px) {
+    #shop{
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+        margin-top: 110px;
+        gap: 0;
+        margin-bottom: 40px;
+    }
+    #shop article:nth-last-child(even){
+        margin-right: 65%;
+    }
+
+    #shop article{
+        margin-bottom: 25px;
+        width: 200px;
+    }
+}
+  
+@media only screen and (max-width: 1640px){
+    #genderField{
+        margin-left:5%;
+    }
+}
+
+@media only screen and (max-width: 1570px){
+    #shop article{
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 1500px){
+    #shop article:nth-last-child(even){
+        margin-right: 75%;
+    }
+}
+
+@media only screen and (max-width: 1440px){
+    #genderField{
+        margin-left:1%;
+    }
+}
+
+@media only screen and (max-width: 1325px){
+    #genderField{
+        top: 15%;
+        margin-left:11%;
+    }
+}
+
+@media only screen and (max-width: 1230px){
+    #shop article:nth-last-child(even){
+        margin-right: 0;
+    }
+    #shop article{
+        width: 200px;
+    }
+    #shop{
+        margin-top: 650px;
+        gap: 20px;
+        margin-bottom: 50px;
     }
 }

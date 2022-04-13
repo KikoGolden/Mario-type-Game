@@ -5,13 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Play" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Game</title>
+    
+    <script src="/src/app.js" type="module"></script>
 </head>
 <body>
+
+    <!--Scores-->
     <section>
-        <h3 class="text">
+        <h3 class="text coin-text">
             Score: <span>0</span>
+            <br>
+            Coins: <img src="/images/coin.png" width="50px"><span id="coins">0</span>
         </h3>
         <h2 class="text">
             Best score: <span>0</span>
@@ -20,20 +27,53 @@
         </h2>
     </section>
 
+    <!--Game over message-->
     <h1 id="gameOver">GAME OVER!</h1>
 
+    <!--Play button-->
     <button id="playBtn" type="button" class="btn btn-secondary">Play</button>
 
+    <!--Gender picker-->
     <div id="genderField">
     <label for="gender" id="genderLabel">Gender:</label>
-
     <select name="gender" id="cars">
       <option value="male">Male</option>
       <option value="female">Female</option>
     </select> 
    </div>
-   
 
+   <!--Shop-->
+   <div id="shop">
+       <article id="ml">
+           <h3>MagicLand</h3>
+           <p>A magic forest hidden in the leaves</p>
+           <img src="https://animesher.com/orig/1/132/1323/13234/animesher.com_paysage-gif-waterfall-1323423.gif" alt="">
+           <button id="BuyMagic" class="button-article">Buy <img style="width: 20px;height: 20px;margin-left: 10px;" src="images/coin.png">100</button>
+       </article>
+
+       <article id="sh">
+        <h3>Snow Hut</h3>
+        <p>Warm hut under the big snow plasts</p>
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a2205e2c-52eb-46b3-89fb-bd0fd5da780e/dbyn08r-83e1c070-bfa6-48da-ae25-b7d7409639fe.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2EyMjA1ZTJjLTUyZWItNDZiMy04OWZiLWJkMGZkNWRhNzgwZVwvZGJ5bjA4ci04M2UxYzA3MC1iZmE2LTQ4ZGEtYWUyNS1iN2Q3NDA5NjM5ZmUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.pFhMtU06SUSgNo6CA5fLFNJlv9h69s9oE89E2E6iAGk" alt="">
+        <button id="BuySnow" class="button-article">Buy <img style="width: 20px;height: 20px;margin-left: 10px;" src="images/coin.png">150</button>
+    </article>
+
+    <article id="jt">
+        <h3>Jungle Temple</h3>
+        <p>Old ruined jungle fortress, aged through the roots</p>
+        <img src="https://cdnb.artstation.com/p/assets/images/images/037/263/051/original/karina-formanova-rainforest-animation.gif?1619929364&dl=1" alt="">
+        <button id="BuyJungle" class="button-article">Buy <img style="width: 20px;height: 20px;margin-left: 10px;" src="images/coin.png">200</button>
+    </article>
+
+    <article id="dl">
+        <h3>Dream Lake</h3>
+        <p>A magic view of a lake that reflects the sunrise</p>
+        <img src="https://64.media.tumblr.com/1d66e14149c1555d02d70cd5f9b637ef/tumblr_pi3lxeuBdf1wrsp5w_540.gifv" alt="">
+        <button id="BuyLake" class="button-article">Buy <img style="width: 20px;height: 20px;margin-left: 10px;" src="images/coin.png">250</button>
+    </article>
+   </div>
+   
+   <!--Game elements-->
     <div id="game">
         <div id="charecter"></div>
 
@@ -43,10 +83,26 @@
         </div>
        
         <div id="winField"></div>
-        
-        <progress id="health" value="100" max="100"></progress>
+
+        <progress id="health" class="stamina" value="100" max="100"></progress> 
     </div>
+
+    <!--Boss coming text-->
     <img id="textBoss" src="/images/Cool Text - Boss is coming 408438151284534.png" alt="">
-    <script src="app.js"></script>
+
+    <!--Stats-->
+    <div id="stamina-wrapper">
+ 
+        <!--Hearts-->
+        <div id="heart-wrapper">
+            <img id="heart-1" src="/images/full-heart.png">
+            <img id="heart-2" src="/images/full-heart.png">
+            <img id="heart-3" src="/images/full-heart.png">
+        </div>
+
+    <!--Stamina-->
+    <label for="stamina" class="stamina" id="staminaLabel">Stamina:</label>
+    <progress name="stamina" id="stamina" value="0" max="100"></progress>
+    </div>
 </body>
 </html>
