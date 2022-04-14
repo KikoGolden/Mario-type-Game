@@ -135,6 +135,7 @@ export const badConnectedFuncs = () => {
             skinPicker();
         }else{
             charecter.style.backgroundImage = "url('/images/princes.png')";
+            skinPicker();
         }
       }
     
@@ -369,6 +370,7 @@ export const badConnectedFuncs = () => {
                 skinHitted();
             }else{
                 charecter.style.backgroundImage = "url('/images/princes_hitted.png')";
+                skinHitted();
             }
     
             setTimeout(function(){
@@ -377,6 +379,7 @@ export const badConnectedFuncs = () => {
                 skinPicker();
                 }else{
                     charecter.style.backgroundImage = "url('/images/princes.png')";
+                    skinPicker();
                 }
             },200);
     

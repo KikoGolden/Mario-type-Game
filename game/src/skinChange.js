@@ -15,7 +15,13 @@ if (localStorage.getItem('skin')) {
             charecter.style.backgroundImage = "url('/images/player-cool.png')";
         } 
     }else{
-        //todo
+        if (type == 'horror') {
+            charecter.style.backgroundImage = "url('/images/princes-scary.png')";
+        }else if(type == 'strong') {
+            charecter.style.backgroundImage = "url('/images/princes.png')";
+        }else if(type == 'cool') {
+            charecter.style.backgroundImage = "url('/images/princes-cool.png')";
+        } 
     }
     
 }
@@ -36,7 +42,13 @@ export const skinHitted = () => {
                 charecter.style.backgroundImage = "url('/images/player-cool-hitted.png')";
             } 
         }else{
-            //todo
+            if (type == 'horror') {
+                charecter.style.backgroundImage = "url('/images/princes-scary-hitted.png')";
+            }else if(type == 'strong') {
+                charecter.style.backgroundImage = "url('/images/princes-hitted.png')";
+            }else if(type == 'cool') {
+                charecter.style.backgroundImage = "url('/images/princes-cool-hitted.png')";
+            } 
         }
         
     }
