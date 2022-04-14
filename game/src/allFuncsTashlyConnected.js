@@ -131,6 +131,7 @@ export const badConnectedFuncs = () => {
         console.log(gender.value);
         if (gender.value == 'male') {
             charecter.style.backgroundImage = "url('/images/player.png')";
+            
             skinPicker();
         }else{
             charecter.style.backgroundImage = "url('/images/princes.png')";
@@ -245,6 +246,9 @@ export const badConnectedFuncs = () => {
           let pow = document.createElement('div');
           pow.classList.add('powerBall');
           pow.style.top = charecterTop + 5 + "px";
+          if (gender.value == 'female') {
+              pow.style.backgroundImage = "url('/images/candyball.png')"
+          }
           gameField.appendChild(pow);
           pow.classList.add('shoot');
           stamina.value -= 10;
