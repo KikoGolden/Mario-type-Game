@@ -41,7 +41,6 @@ export const badConnectedFuncs = () => {
     let hasWon = false;
     
     newBest.style.display = 'none';
-    gameOver.style.display = 'none';
     bossText.style.display = 'none';
     bossHealth.style.display = 'none';
     staminaField.style.display = 'none';
