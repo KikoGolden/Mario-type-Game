@@ -30,8 +30,8 @@ export const scoreChecker = () => {
       charecter.style.backgroundImage = "url('/images/player-strong.png')";
     charecterType.style.backgroundImage = "url('/images/player-strong.png')";
      }else{
-      charecter.style.backgroundImage = "url('/images/princes.png')";
-    charecterType.style.backgroundImage = "url('/images/princes.png')";
+      charecter.style.backgroundImage = "url('/images/princes-strong.png')";
+    charecterType.style.backgroundImage = "url('/images/princes-strong.png')";
      }
 
     textType.innerHTML = 'New Charecter Unlocked!<br>1000 Points Reached';
