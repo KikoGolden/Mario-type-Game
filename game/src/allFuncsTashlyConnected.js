@@ -201,8 +201,12 @@ export const badConnectedFuncs = () => {
     });
     
     //JUMP CLICK MOUSE FUNC
-    addEventListener('click', () => {
+    
+    addEventListener('click', (event) => {
+        if (event.detail === 1) {//single click
+           
         if (charecter.classList != 'jump' && playBtn.style.display == 'none') {
+            charecter.classList.remove('doubleJump');
             charecter.classList.add('jump');
             let scoreValue = parseInt(score.textContent) + 15;
             
@@ -233,6 +237,40 @@ export const badConnectedFuncs = () => {
           setTimeout(function(){
               charecter.classList.remove('jump');
           }, 500);
+          } else if (event.detail === 2) {//double click
+            if (charecter.classList != 'doubleJump' && playBtn.style.display == 'none') {
+                charecter.classList.remove('jump');
+                charecter.classList.add('doubleJump');
+                let scoreValue = parseInt(score.textContent) + 15;
+                
+                if (scoreValue > 500) {
+                    let boss = document.createElement('div');
+                    boss.classList.add('boss');
+                     block.classList.remove('move');
+                     block.classList.add('cloudShoot');
+        
+                    if (!isSpawned && health == 100) {
+                        bossText.style.display = 'block';
+                        block.style.display = 'none';
+                        setTimeout(() =>{
+                            
+                            bossHealth.style.display = 'inline';
+                            bossText.style.display = 'none';
+                            bossPlace.appendChild(boss);
+                            beganShooting = true;
+                            block.style.display = 'block';
+                        },2000);
+        
+                        isSpawned = true;
+                    }
+               }
+        
+            score.textContent = scoreValue;
+            }
+              setTimeout(function(){
+                  charecter.classList.remove('doubleJump');
+              }, 700);
+          }
     });
     
     //SHOOT CLICK E FUNC
@@ -301,7 +339,7 @@ export const badConnectedFuncs = () => {
     
           setTimeout(function(){
             gameField.removeChild(pow);
-          },500);
+          },490);
         }
           
       }

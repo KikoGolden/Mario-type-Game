@@ -211,6 +211,9 @@ h1{
 }
 
 /*functionalities*/
+.doubleJump{
+    animation: doubleJump 0.7s linear;
+}
 .jump{
     animation: jump 0.5s linear;
 }
@@ -435,6 +438,27 @@ h1{
     }
     80%{
         top: 420px;
+    }
+    100%{
+        top: 450px;
+    }
+}
+
+@keyframes doubleJump {
+    0%{
+        top: 430px;
+    }
+    20%{
+        top: 350px;
+    }
+    40%{
+        top: 320px;
+    }
+    60%{
+        top: 320px;
+    }
+    80%{
+        top: 350px;
     }
     100%{
         top: 450px;
